@@ -4,11 +4,11 @@ var swiperOne = new Swiper('.mySwiper', {
 		initialSlide: 2,
 	}),
 	swiperTwo = new Swiper('.swiper-container', {
-		loop: true, // Включаем бесконечный цикл
-		slidesPerView: 5, // Количество видимых логотипов
-		spaceBetween: 0, // Расстояние между логотипами
+		loop: true,
+		slidesPerView: 5,
+		spaceBetween: 0,
 		autoplay: {
-		  delay: 0, // Автоматическая прокрутка без задержки
+		  delay: 0,
 		  disableOnInteraction: false,
 		},
 		speed: 2000,
