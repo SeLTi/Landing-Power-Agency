@@ -1,15 +1,25 @@
-var swiper = new Swiper('.mySwiper', {
-	slidesPerView: 1,
-	loop: true,
-	initialSlide: 2,
-});
+var swiperOne = new Swiper('.mySwiper', {
+		slidesPerView: 1,
+		loop: true,
+		initialSlide: 2,
+	}),
+	swiperTwo = new Swiper('.swiper-container', {
+		loop: true, // Включаем бесконечный цикл
+		slidesPerView: 5, // Количество видимых логотипов
+		spaceBetween: 0, // Расстояние между логотипами
+		autoplay: {
+		  delay: 0, // Автоматическая прокрутка без задержки
+		  disableOnInteraction: false,
+		},
+		speed: 2000,
+	});
 
 const navImgContainers = document.querySelectorAll('.comments_nav__img_w');
 const navDataBlocks = document.querySelectorAll('.comments_nav__data');
 
 navImgContainers.forEach((imgContainer, index) => {
 	imgContainer.addEventListener('click', () => {
-		swiper.slideToLoop(index);
+		swiperOne.slideToLoop(index);
 
 		navImgContainers.forEach(el => el.classList.remove('active'));
 		navDataBlocks.forEach(dataEl => dataEl.classList.remove('active'));
@@ -21,8 +31,8 @@ navImgContainers.forEach((imgContainer, index) => {
 	});
 });
 
-swiper.on('slideChange', () => {
-	const activeIndex = swiper.realIndex;
+swiperOne.on('slideChange', () => {
+	const activeIndex = swiperOne.realIndex;
 	navImgContainers.forEach((el, index) => {
 		const isActive = index === activeIndex;
 		el.classList.toggle('active', isActive);
