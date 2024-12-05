@@ -1,3 +1,5 @@
+@use '../variables' as *;
+
 @mixin st_btn {
 	display: inline-flex;
 	justify-content: center;
@@ -11,34 +13,47 @@
 }
 
 //color extends
-// %transp_btn_1 {
-// 	@include st_btn;
+%transp_btn_1 {
+	@include st_btn;
 
-// 	font-weight: 700;
-// 	color: $color_white;
-// 	background-color: transparent;
-// 	transition: 0.3s ease;
-// 	border: 2px solid $color_white;
+	font-weight: 600;
+	color: #ffffff;
+	background: #706fe5;
+	transition: all 0.3s ease-in-out;
+	// border: 2px solid $color_white;
 
-// 	&:hover {
-// 		background-color: $color_white;
-// 		color: $color_black;
-// 	}
-// }
+
+	&:hover {
+		background: rgba(#706fe5, 75%);
+	}
+}
 
 //size extends
-// %btn_size_1 {
-// 	min-width: 23.2rem;
-// 	height: 5.4rem;
-// 	padding: 0 2rem;
+%btn_size_1 {
+	height: 4.7rem;
+	min-width: 18.1rem;
 
-// 	line-height: 5.4rem;
-// 	font-size: 1.6rem;
+	line-height: 1.5;
+	font-size: 1.8rem;
 
-// 	border-radius: 2px;
-// }
+	border-radius: 1.2rem;
+}
 
-// .btn_white_1 {
-// 	@extend %white_btn_1;
-// 	@extend %btn_size_1;
-// }
+.btn {
+	@extend %transp_btn_1;
+	@extend %btn_size_1;
+}
+
+.btn--sub {
+	position: absolute;
+	left: 30rem;
+	top: 1.3rem;
+
+	min-width: 17.2rem;
+
+	border: none;
+
+	box-shadow: 0rem 0.6rem 2rem 0rem #706fe580;
+
+	padding: 1rem 4rem 1rem 4rem;
+}

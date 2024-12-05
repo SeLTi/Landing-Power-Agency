@@ -1,0 +1,58 @@
+@use '../helpers/abstracts' as *;
+
+// HEADER
+.header {
+	height: 4rem;
+	width: 100%;
+
+	margin-top: 2.6rem;
+	margin-bottom: 2rem;
+}
+
+.header__in {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 10rem;
+	
+	height: 100%;
+}
+
+.header_content{
+	display: flex;
+	justify-content: space-between;
+
+	width: 100%;
+	
+	padding: 0 15rem;
+}
+
+.header__logo_w {
+	width: 9.4rem;
+	height: 3.8rem;
+}
+
+.header__logo {
+	@extend %cover_img;
+}
+
+.nav__list {
+	display: flex;
+	column-gap: 6rem;
+}
+
+.nav__link {
+	color: #1e1f4b;
+	text-decoration: none;
+
+	font-size: 1.6rem;
+	line-height: 1.75;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.nav__link:hover {
+	color: #706fe5;
+	text-decoration: underline;
+}
+// HEADER###
