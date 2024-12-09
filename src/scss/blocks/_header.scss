@@ -2,11 +2,18 @@
 
 // HEADER
 .header {
+	position: sticky;
+	top: 0;
+
 	height: 4rem;
 	width: 100%;
 
-	margin-top: 2.6rem;
-	margin-bottom: 2rem;
+	padding-top: 2.6rem;
+	padding-bottom: 2rem;
+
+	background-color: #FFFFFF;
+
+	z-index: 999;
 }
 
 .header__in {

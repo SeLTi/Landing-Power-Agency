@@ -5,26 +5,26 @@
 .section--base {
 	padding: 12.5rem 0;
 
-	@include bp(767px, max) {
+	@include bp(767px) {
 		padding-top: 1rem;
 	}
 }
 
 .base {
 	display: flex;
-	column-gap: 9rem;
+	column-gap: 1rem;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	padding: 0 15rem;
 
-	@include bp(1024px, max) {
+	@include bp(1024px) {
 		flex-direction: column;
 		row-gap: 17rem;
 
 		padding: 0;
 	}
 
-	@include bp(767px, max) {
+	@include bp(767px) {
 		row-gap: 12rem;
 	}
 }
@@ -34,14 +34,14 @@
 	max-width: 60%;
 	flex-shrink: 0;
 
-	@include bp(1024px, max) {
+	@include bp(1024px) {
 		max-width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	@include bp(767px, max) {
+	@include bp(767px) {
 	}
 }
 
@@ -52,11 +52,11 @@
 	line-height: 1.83;
 	color: #1e1f4b;
 
-	@include bp(1024px, max) {
+	@include bp(1024px) {
 		text-align: center;
 	}
 
-	@include bp(767px, max) {
+	@include bp(767px) {
 		font-size: 4rem;
 		margin-bottom: 1.5rem;
 	}
@@ -110,12 +110,12 @@
 		margin-bottom: 2.4rem;
 	}
 
-	@include bp(1024px, max) {
+	@include bp(1024px) {
 		max-width: 70%;
 		text-align: center;
 	}
 
-	@include bp(767px, max) {
+	@include bp(767px) {
 		max-width: 100%;
 		text-align: center;
 		&:not(:last-child) {
@@ -172,7 +172,7 @@
 }
 
 .btn--contact_us {
-	@include bp(767px, max) {
+	@include bp(767px) {
 		min-width: 15.1rem;
 	}
 }
@@ -183,7 +183,7 @@
 	justify-content: center;
 	align-items: flex-end;
 
-	@include bp(767px, max) {
+	@include bp(767px) {
 		width: 100%;
 	}
 }
@@ -198,7 +198,7 @@
 	border-radius: 50%;
 	background-color: rgba(112, 111, 229, 0.15);
 
-	@include bp(767px, max) {
+	@include bp(767px) {
 		height: 36rem;
 		width: 36rem;
 	}
@@ -212,7 +212,7 @@
 	height: 45.5rem;
 	width: 45.5rem;
 
-	@include bp(767px, max) {
+	@include bp(767px) {
 		height: 41.5rem;
 		width: 41.5rem;
 	}
@@ -239,7 +239,7 @@
 
 	overflow: hidden;
 
-	@include bp(767px, max) {
+	@include bp(767px) {
 		align-items: center;
 		width: 23rem;
 	}
@@ -308,7 +308,7 @@
 		width: 6.8rem;
 		height: 6.8rem;
 
-		@include bp(767px, max) {
+		@include bp(767px) {
 			top: -6.7rem;
 			left: -1.4rem;
 			width: 4.8rem;
@@ -321,7 +321,7 @@
 		width: 10rem;
 		height: 10rem;
 
-		@include bp(767px, max) {
+		@include bp(767px) {
 			top: -2.2rem;
 			left: 1.6rem;
 			width: 7rem;
@@ -334,7 +334,7 @@
 		width: 12.4rem;
 		height: 12.4rem;
 
-		@include bp(767px, max) {
+		@include bp(767px) {
 			top: -3.4rem;
 			right: 0.8rem;
 			width: 8.4rem;
@@ -353,7 +353,7 @@
 
 		z-index: -1;
 
-		@include bp(767px, max) {
+		@include bp(767px) {
 			bottom: -7.4rem;
 			right: 3.4rem;
 			width: 7.4rem;
