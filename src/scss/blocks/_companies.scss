@@ -1,0 +1,68 @@
+@use '../helpers/abstracts' as *;
+
+// SECTION COMPANIES
+
+.section--companies {
+	padding: 6rem 0 9rem;
+
+	background: #706fe505;
+}
+
+.companies__title {
+	font-size: 2rem;
+	font-weight: 600;
+	line-height: 1.2;
+	text-align: center;
+
+	color: #1e1f4b;
+
+	margin-bottom: 4.7rem;
+}
+
+.companies__img_w--google {
+	width: 10.9rem;
+	height: 3.6rem;
+}
+
+.companies__img_w--airbnb {
+	width: 11.6rem;
+	height: 3.6rem;
+}
+
+.companies__img_w--creative {
+	width: 11rem;
+	height: 4.2rem;
+}
+
+.companies__img_w--shopify {
+	width: 12.6rem;
+	height: 3.6rem;
+}
+
+.companies__img_w--amazon {
+	width: 11.9rem;
+	height: 3.6rem;
+}
+
+.companies__img {
+	@extend %contain_img;
+}
+
+.companies_slider__container {
+	width: 80%;
+	overflow: hidden;
+	// align-content: center;
+}
+
+.companies_slider {
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+}
+
+.companies__img_w {
+	align-self: center;
+}
+
+// SECTION COMPANIES###
