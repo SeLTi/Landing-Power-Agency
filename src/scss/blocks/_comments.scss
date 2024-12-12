@@ -3,13 +3,28 @@
 // SECTION COMMENTS
 
 .section--comments {
-	padding: 9rem 0;
+	@include bp($point_4, min) {
+		padding: 9rem 0;
+	}
+
+	@include bp($point_4) {
+		padding: 4rem 0;
+	}
 
 	background-color: #706fe505;
 }
 
-.container--comments{
+.container--comments {
 	position: relative;
+}
+
+.comments {
+	position: relative;
+	display: block;
+
+	max-width: 67rem;
+	width: 100%;
+	margin: 0 auto;
 }
 
 .hero_slider {
@@ -19,6 +34,10 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
+	@include bp($point_3, min) {
+		padding: 0 15rem;
+	}
 }
 
 .hero_slider__title {
@@ -46,15 +65,21 @@
 	line-height: 1.5;
 	text-align: center;
 	color: #03014c;
-
-	max-width: 67rem;
 }
 
 .comments_nav {
 	display: flex;
 	justify-content: center;
-	// column-gap: 7.5rem;
 	height: 22rem;
+
+	@include bp($point_2) {
+		flex-wrap: wrap;
+		align-content: center;
+	}
+
+	@media (min-width: $point_4) and (max-width: $point_2) {
+		padding: 20rem 0;
+	}
 }
 
 .comments_nav__item {
@@ -65,9 +90,6 @@
 }
 
 .comments_nav__img_w {
-	width: 6.7rem;
-	height: 6.7rem;
-
 	border-radius: 50%;
 
 	transition: all 0.3s ease-in-out;
@@ -75,11 +97,28 @@
 	opacity: 65%;
 
 	cursor: pointer;
+
+	@include bp($point_4, min) {
+		width: 6.7rem;
+		height: 6.7rem;
+	}
+
+	@include bp($point_4) {
+		width: 5.7rem;
+		height: 5.7rem;
+	}
 }
 
 .comments_nav__img_w.active {
-	width: 8.6rem;
-	height: 8.6rem;
+	@include bp($point_4, min) {
+		width: 8.6rem;
+		height: 8.6rem;
+	}
+
+	@include bp($point_4) {
+		width: 7.6rem;
+		height: 7.6rem;
+	}
 
 	border: 0.5rem solid #706fe5;
 	padding: 0.2rem;
@@ -112,87 +151,161 @@
 }
 
 .comments_nav__name {
-	font-size: 2.4rem;
 	font-weight: 700;
 	line-height: 1.5;
+	text-align: center;
 
 	color: #1e1f4b;
+
+	@include bp($point_4, min) {
+		font-size: 2.4rem;
+	}
+
+	@include bp($point_4) {
+		font-size: 1.5rem;
+	}
 }
 
 .comments_nav__pos {
-	font-size: 2rem;
 	font-weight: 500;
 	line-height: 1.5;
 	text-align: center;
 
 	color: #2e3e5c;
+
+	@include bp($point_4, min) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_4) {
+		font-size: 1rem;
+	}
 }
 
 .mySwiper {
 	max-width: 67rem;
 }
 
+.hero_slider::before {
+	@include bp($point_4, min) {
+		content: '';
+		width: 5.5rem;
+		height: 5rem;
 
-.hero_slider::before{
-	content: "";
-	width: 5.5rem;
-	height: 5rem;
+		position: absolute;
 
-	position: absolute;
-	left: 30.2rem;
-	top: 15.3rem;
+		@include bp(1450px, min) {
+			left: 30.2rem;
+			top: 15.3rem;
+		}
 
-	background-image: url("../../imgs/decor_svg.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
+		@media (min-width: $point_1) and (max-width: 1450px) {
+			left: 14rem;
+			top: 15.3rem;
+		}
+
+		@media (min-width: $point_2) and (max-width: $point_1) {
+			left: 30.2rem;
+			top: 15.3rem;
+		}
+
+		@include bp($point_2) {
+			left: 0;
+			top: 15.3rem;
+		}
+
+		background-image: url('../../imgs/decor_svg.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 }
 
-.hero_slider::after{
-	content: "";
-	width: 5.5rem;
-	height: 5rem;
+.hero_slider::after {
+	@include bp($point_4, min) {
+		content: '';
+		width: 5.5rem;
+		height: 5rem;
 
-	position: absolute;
-    right: 28.6rem;
-    top: 15.9rem;
+		position: absolute;
 
-	background-image: url("../../imgs/decor_svg.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
+		@include bp(1450px, min) {
+			right: 28.6rem;
+			top: 15.9rem;
+		}
 
-	transform:rotate(180deg);
+		@media (min-width: $point_1) and (max-width: 1450px) {
+			right: 14rem;
+			top: 15.9rem;
+		}
+
+		@media (min-width: $point_2) and (max-width: $point_1) {
+			right: 28.6rem;
+			top: 15.9rem;
+		}
+
+		@include bp($point_2) {
+			right: 0;
+			top: 15.9rem;
+		}
+
+		background-image: url('../../imgs/decor_svg.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		transform: rotate(180deg);
+	}
 }
 
-.container--comments::before{
-	content: "";
-	width: 10rem;
-	height: 7.1rem;
+.container--comments::before {
+	@include bp($point_4, min) {
+		content: '';
+		width: 10rem;
+		height: 7.1rem;
 
-	position: absolute;
-	left: 15.3rem;
-    top: -1rem;
+		position: absolute;
 
-	background-image: url("../../imgs/decor2_svg.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
+		@include bp($point_2, min) {
+			left: 15.3rem;
+			top: -1rem;
+		}
+
+		@include bp($point_2) {
+			left: 2rem;
+			top: -1rem;
+		}
+
+		background-image: url('../../imgs/decor2_svg.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 }
 
-.container--comments::after{
-	content: "";
-	width: 10rem;
-	height: 7.1rem;
+.container--comments::after {
+	@include bp($point_4, min) {
+		content: '';
+		width: 10rem;
+		height: 7.1rem;
 
-	position: absolute;
-	right: 15.3rem;
-    top: 51.2rem;
+		position: absolute;
 
-	background-image: url("../../imgs/decor2_svg.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
+		@include bp($point_2, min) {
+			right: 15.3rem;
+			top: 51.2rem;
+		}
+
+		@include bp($point_2) {
+			right: 2rem;
+			top: 51.2rem;
+		}
+
+		background-image: url('../../imgs/decor2_svg.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 }
 
 // SECTION COMMENTS###

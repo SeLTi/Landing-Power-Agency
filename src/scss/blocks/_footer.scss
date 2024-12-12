@@ -6,15 +6,27 @@
 	background: #2e3e5c;
 	border: 0.1rem solid #706fe5;
 
-	padding: 5.5rem 0;
+	@include bp($point_4, min) {
+		padding: 5.5rem 0;
+	}
+
+	@include bp($point_4) {
+		padding: 2.5rem 0;
+	}
 }
 
 .footer_content {
 	display: flex;
 	flex-direction: column;
-	row-gap: 4.8rem;
 
-	padding: 0 15rem;
+	@include bp($point_3, min) {
+		padding: 0 15rem;
+		row-gap: 4.8rem;
+	}
+
+	@include bp($point_2) {
+		row-gap: 2.8rem;
+	}
 }
 
 .footer__icons {
@@ -37,7 +49,14 @@
 
 .footer__social {
 	display: flex;
-	column-gap: 1.6rem;
+
+	@include bp($point_4, min) {
+		column-gap: 1.6rem;
+	}
+
+	@include bp($point_4) {
+		column-gap: 0.5rem;
+	}
 }
 
 .footer__icon_w {
@@ -45,8 +64,15 @@
 	align-items: center;
 	justify-content: center;
 
-	width: 4.8rem;
-	height: 4.8rem;
+	@include bp($point_4, min) {
+		width: 4.8rem;
+		height: 4.8rem;
+	}
+
+	@include bp($point_4) {
+		width: 3.5rem;
+		height: 3.5rem;
+	}
 
 	background: #706fe5;
 	border-radius: 50%;
@@ -86,14 +112,30 @@
 	align-items: center;
 	justify-content: space-between;
 
-	column-gap: 13rem;
+	@include bp($point_2, min) {
+		column-gap: 13rem;
+		margin-bottom: 7.5rem;
+	}
 
-	margin-bottom: 7.5rem;
+	@include bp($point_2) {
+		flex-direction: column;
+		row-gap: 2rem;
+		margin-bottom: 2.5rem;
+	}
 }
 
 .footer__list {
 	display: flex;
-	column-gap: 6rem;
+
+	@include bp($point_2, min) {
+		column-gap: 6rem;
+	}
+
+	@include bp($point_2) {
+		column-gap: 2.5rem;
+		row-gap: 0.5rem;
+		flex-wrap: wrap;
+	}
 }
 
 .footer__link {

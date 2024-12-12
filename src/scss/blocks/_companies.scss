@@ -3,7 +3,13 @@
 // SECTION COMPANIES
 
 .section--companies {
-	padding: 6rem 0 9rem;
+	@include bp($point_4, min) {
+		padding: 6rem 0 9rem;
+	}
+
+	@include bp($point_4) {
+		padding: 3rem 0;
+	}
 
 	background: #706fe505;
 }
@@ -49,9 +55,15 @@
 }
 
 .companies_slider__container {
-	width: 80%;
 	overflow: hidden;
-	// align-content: center;
+
+	@include bp($point_2, min) {
+		width: 80%;
+	}
+
+	@include bp($point_2) {
+		width: 100%;
+	}
 }
 
 .companies_slider {
@@ -63,6 +75,12 @@
 
 .companies__img_w {
 	align-self: center;
+}
+
+.swiper-wrapper {
+	@include bp($point_4) {
+		column-gap: 1rem;
+	}
 }
 
 // SECTION COMPANIES###

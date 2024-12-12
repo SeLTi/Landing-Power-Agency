@@ -8,8 +8,8 @@ var swiperOne = new Swiper('.mySwiper', {
 		slidesPerView: 5,
 		spaceBetween: 0,
 		autoplay: {
-		  delay: 0,
-		  disableOnInteraction: false,
+			delay: 0,
+			disableOnInteraction: false,
 		},
 		speed: 2000,
 	});
@@ -39,5 +39,29 @@ swiperOne.on('slideChange', () => {
 		if (navDataBlocks[index]) {
 			navDataBlocks[index].classList.toggle('active', isActive);
 		}
+	});
+});
+
+
+const navButton = document.querySelector('.nav_btn');
+const navCloseButton = document.querySelector('.nav_close');
+const headerNav = document.querySelector('.nav');
+const body = document.querySelector('.body');
+const navLinks = document.querySelectorAll('.nav a');
+
+navButton.addEventListener('click', () => {
+	headerNav.classList.toggle('active');
+	body.classList.toggle('body--overflow_hidden');
+});
+
+navCloseButton.addEventListener('click', () => {
+	headerNav.classList.remove('active');
+	body.classList.remove('body--overflow_hidden');
+});
+
+navLinks.forEach(link => {
+	link.addEventListener('click', () => {
+		headerNav.classList.remove('active');
+		body.classList.remove('body--overflow_hidden');
 	});
 });

@@ -8,12 +8,13 @@
 	height: 4rem;
 	width: 100%;
 
-	padding-top: 2.6rem;
+	padding-top: 3.6rem;
 	padding-bottom: 2rem;
 
-	background-color: #FFFFFF;
+	background-color: rgba(#ffffff, 90%);
 
 	z-index: 999;
+	
 }
 
 .header__in {
@@ -21,17 +22,20 @@
 	justify-content: space-between;
 	align-items: center;
 	column-gap: 10rem;
-	
+
 	height: 100%;
 }
 
-.header_content{
+.header_content {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 
 	width: 100%;
-	
-	padding: 0 15rem;
+
+	@include bp($point_3, min) {
+		padding: 0 15rem;
+	}
 }
 
 .header__logo_w {
@@ -46,20 +50,127 @@
 .nav__list {
 	display: flex;
 	column-gap: 6rem;
+
+	@include bp($point_2) {
+		display: flex;
+		flex-direction: column;
+		padding: 4rem;
+		align-items: center;
+		justify-content: center;
+		row-gap: 4rem;
+		margin: auto;
+	}
 }
 
 .nav__link {
 	color: #1e1f4b;
 	text-decoration: none;
-
-	font-size: 1.6rem;
 	line-height: 1.75;
+
+	@include bp($point_3, min) {
+		font-size: 1.6rem;
+	}
+
+	@include bp($point_2) {
+		font-size: 6.6rem;
+
+	}
+
+	@include bp($point_4) {
+		font-size: 3.6rem;
+	}
 
 	transition: all 0.3s ease-in-out;
 }
 
 .nav__link:hover {
-	color: #706fe5;
 	text-decoration: underline;
+
+	@include bp($point_3, min) {
+		color: #706fe5;
+	}
+
+	@include bp($point_2) {
+		color: #1abeca;
+	}
+}
+
+.nav_btn {
+	display: block;
+	position: absolute;
+	z-index: 997;
+
+	mask-image: url(../../imgs/burger_menu.svg);
+	mask-size: cover;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	background-color: black;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+
+	@include bp($point_2) {
+		right: 4rem;
+		height: 6rem;
+		width: 6rem;
+	}
+
+	@include bp($point_4) {
+		right: 2rem;
+		height: 5rem;
+		width: 5rem;
+	}
+}
+
+.nav {
+	@include bp($point_2) {
+		position: fixed;
+		z-index: 998;
+		top: 0;
+		left: 0;
+		width: 100dvw;
+		height: 100dvh;
+		background-color: #706fe5;
+		display: flex;
+		transform: translateX(-100dvw);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: all 0.3s ease-in-out;
+		overflow: auto;
+	}
+}
+
+.nav.active {
+	@include bp($point_2) {
+		transform: translateX(0dvw);
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+}
+
+.nav_close {
+	display: block;
+	position: absolute;
+	z-index: 999;
+	mask-image: url(../../imgs/close_btn.svg);
+	mask-size: cover;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	background-color: black;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	@include bp($point_2) {
+		top: 6.5rem;
+		right: 7.5rem;
+		height: 50px;
+		width: 50px;
+	}
+	@include bp($point_4) {
+		top: 2.5rem;
+		right: 2.5rem;
+		height: 4rem;
+		width: 4rem;
+	}
 }
 // HEADER###

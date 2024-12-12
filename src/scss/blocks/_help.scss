@@ -3,7 +3,29 @@
 // SECTION HELP
 
 .section--help {
-	padding: 12.5rem 0;
+	@include bp($point_4, min) {
+		padding: 12.5rem 0;
+	}
+
+	@include bp($point_4) {
+		padding: 3.5rem 0;
+	}
+}
+
+.hero_help {
+	display: flex;
+	justify-content: center;
+
+	@include bp($point_3, min) {
+		column-gap: 9.4rem;
+		padding: 0 15rem;
+	}
+
+	@include bp($point_2) {
+		flex-direction: column;
+		row-gap: 3.5rem;
+		align-items: center;
+	}
 }
 
 .hero_help__title {
@@ -15,6 +37,10 @@
 
 	margin-bottom: 1rem;
 	padding-top: 3.6rem;
+
+	@include bp($point_4) {
+		text-align: center;
+	}
 }
 
 .hero_help__descr {
@@ -24,6 +50,12 @@
 	color: #1b1d21;
 
 	margin-bottom: 5rem;
+
+	max-width: 45.7rem;
+
+	@include bp($point_4) {
+		text-align: justify;
+	}
 }
 
 .hero_help__form {
@@ -31,7 +63,14 @@
 }
 
 .hero_help__email {
-	min-width: 49.1rem;
+	@include bp($point_4, min) {
+		min-width: 49.1rem;
+	}
+
+	@include bp($point_4) {
+		min-width: 100%;
+	}
+
 	height: 7.2rem;
 
 	background: rgba(112, 111, 229, 10%);
@@ -48,6 +87,15 @@
 	color: #2e3e5c;
 
 	opacity: 70%;
+}
+
+.btn--sub {
+	@include bp($point_4) {
+		position: relative;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
 }
 
 .hero_help__email::placeholder {
@@ -126,12 +174,6 @@
 	line-height: 1.5;
 
 	color: #2e3e5c;
-}
-
-.hero_help {
-	display: flex;
-	justify-content: center;
-	column-gap: 9.4rem;
 }
 
 .hero_help__col2 {

@@ -5,7 +5,7 @@
 .section--base {
 	padding: 12.5rem 0;
 
-	@include bp(767px) {
+	@include bp($point_3) {
 		padding-top: 1rem;
 	}
 }
@@ -15,48 +15,54 @@
 	column-gap: 1rem;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 15rem;
 
-	@include bp(1024px) {
-		flex-direction: column;
-		row-gap: 17rem;
-
-		padding: 0;
+	@include bp($point_3, min) {
+		padding: 0 15rem;
 	}
 
-	@include bp(767px) {
+	@media (min-width: $point_4) and (max-width: $point_2) {
+		flex-direction: column;
+		row-gap: 17rem;
+	}
+
+	@include bp($point_4) {
+		flex-direction: column;
 		row-gap: 12rem;
 	}
 }
 
 .base__info_w {
-	display: block;
-	max-width: 60%;
-	flex-shrink: 0;
+	@include bp($point_2, min) {
+		display: block;
+		max-width: 60%;
+		flex-shrink: 0;
+	}
 
-	@include bp(1024px) {
+	@include bp($point_2) {
 		max-width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
-
-	@include bp(767px) {
-	}
 }
 
 .base__title {
-	margin-bottom: 3rem;
-	font-size: 6rem;
 	font-weight: 700;
 	line-height: 1.83;
 	color: #1e1f4b;
 
-	@include bp(1024px) {
-		text-align: center;
+	@include bp($point_2, min) {
+		margin-bottom: 3rem;
+		font-size: 6rem;
 	}
 
-	@include bp(767px) {
+	@include bp($point_2) {
+		text-align: center;
+		margin-bottom: 3rem;
+		font-size: 6rem;
+	}
+
+	@include bp($point_5) {
 		font-size: 4rem;
 		margin-bottom: 1.5rem;
 	}
@@ -101,21 +107,28 @@
 }
 
 .base__descr {
-	max-width: 55.5rem;
-
 	font-size: 2rem;
 	line-height: 1.8;
 	color: rgba(46, 62, 92, 0.8);
-	&:not(:last-child) {
-		margin-bottom: 2.4rem;
+
+	@include bp($point_2, min) {
+		max-width: 55.5rem;
+
+		&:not(:last-child) {
+			margin-bottom: 2.4rem;
+		}
 	}
 
-	@include bp(1024px) {
+	@include bp($point_2) {
 		max-width: 70%;
 		text-align: center;
+
+		&:not(:last-child) {
+			margin-bottom: 2.4rem;
+		}
 	}
 
-	@include bp(767px) {
+	@include bp($point_4) {
 		max-width: 100%;
 		text-align: center;
 		&:not(:last-child) {
@@ -126,8 +139,16 @@
 
 .base__btns {
 	display: flex;
-	align-items: center;
-	column-gap: 3.4rem;
+
+	@include bp($point_4, min) {
+		align-items: center;
+		column-gap: 3.4rem;
+	}
+
+	@include bp($point_4) {
+		flex-direction: column;
+		row-gap: 1.5rem;
+	}
 }
 
 .btn_watch {
@@ -171,8 +192,8 @@
 	}
 }
 
-.btn--contact_us {
-	@include bp(767px) {
+.btn {
+	@include bp($point_4) {
 		min-width: 15.1rem;
 	}
 }
@@ -182,23 +203,22 @@
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
-
-	@include bp(767px) {
-		width: 100%;
-	}
 }
 
 .base_picture {
 	display: flex;
 	justify-content: center;
 	flex-shrink: 0;
-	height: 40rem;
-	width: 40rem;
 	border: 1rem solid #706fe5;
 	border-radius: 50%;
 	background-color: rgba(112, 111, 229, 0.15);
 
-	@include bp(767px) {
+	@include bp($point_4, min) {
+		height: 40rem;
+		width: 40rem;
+	}
+
+	@include bp($point_4) {
 		height: 36rem;
 		width: 36rem;
 	}
@@ -209,10 +229,12 @@
 	bottom: 4rem;
 	right: -1.1rem;
 
-	height: 45.5rem;
-	width: 45.5rem;
+	@include bp($point_4, min) {
+		height: 45.5rem;
+		width: 45.5rem;
+	}
 
-	@include bp(767px) {
+	@include bp($point_4) {
 		height: 41.5rem;
 		width: 41.5rem;
 	}
@@ -229,7 +251,6 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 24rem;
 	min-height: 13.2rem;
 	padding: 1.4rem 2.6rem;
 
@@ -239,7 +260,11 @@
 
 	overflow: hidden;
 
-	@include bp(767px) {
+	@include bp($point_4, min) {
+		width: 24rem;
+	}
+
+	@include bp($point_4) {
 		align-items: center;
 		width: 23rem;
 	}
@@ -303,12 +328,14 @@
 	position: absolute;
 
 	&.base__decor--1 {
-		top: -13.7rem;
-		left: -11.4rem;
-		width: 6.8rem;
-		height: 6.8rem;
+		@include bp($point_4, min) {
+			top: -13.7rem;
+			left: -11.4rem;
+			width: 6.8rem;
+			height: 6.8rem;
+		}
 
-		@include bp(767px) {
+		@include bp($point_4) {
 			top: -6.7rem;
 			left: -1.4rem;
 			width: 4.8rem;
@@ -316,12 +343,14 @@
 		}
 	}
 	&.base__decor--2 {
-		top: -8.2rem;
-		left: -3.4rem;
-		width: 10rem;
-		height: 10rem;
+		@include bp($point_4, min) {
+			top: -8.2rem;
+			left: -3.4rem;
+			width: 10rem;
+			height: 10rem;
+		}
 
-		@include bp(767px) {
+		@include bp($point_4) {
 			top: -2.2rem;
 			left: 1.6rem;
 			width: 7rem;
@@ -329,12 +358,14 @@
 		}
 	}
 	&.base__decor--3 {
-		top: -8.4rem;
-		right: -5.2rem;
-		width: 12.4rem;
-		height: 12.4rem;
+		@include bp($point_4, min) {
+			top: -8.4rem;
+			right: -5.2rem;
+			width: 12.4rem;
+			height: 12.4rem;
+		}
 
-		@include bp(767px) {
+		@include bp($point_4) {
 			top: -3.4rem;
 			right: 0.8rem;
 			width: 8.4rem;
@@ -343,17 +374,19 @@
 	}
 
 	&.base__decor--4 {
-		bottom: -8.4rem;
-		right: 2.4rem;
-
-		width: 8.4rem;
-		height: 8.4rem;
 		background-color: #706fe5;
 		border-radius: 50%;
 
 		z-index: -1;
 
-		@include bp(767px) {
+		@include bp($point_4, min) {
+			bottom: -8.4rem;
+			right: 2.4rem;
+			width: 8.4rem;
+			height: 8.4rem;
+		}
+
+		@include bp($point_4) {
 			bottom: -7.4rem;
 			right: 3.4rem;
 			width: 7.4rem;
